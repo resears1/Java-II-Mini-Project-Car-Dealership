@@ -1,0 +1,3 @@
+create database dealership;
+use dealership;
+create table cars (ID int NOT NULL AUTO_INCREMENT, MAKE varchar(30) NOT NULL, MODEL varchar(30) NOT NULL, YEAR int(4) NOT NULL, PRIMARY KEY(ID));
