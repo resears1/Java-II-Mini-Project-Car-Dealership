@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form method = "post" action = "navigationServlet">
 <table>
 	<c:forEach items="${requestScope.allCars}" var="currentcar">
 		<tr>
@@ -18,5 +19,9 @@
 		</tr>
 	</c:forEach>
 </table>
+<input type = "submit" value = "edit" name = "doThisToCar">
+<input type = "submit" value = "delete" name = "doThisToCar">
+<input type = "submit" value = "add" name = "doThisToCar">
+</form>
 </body>
 </html>
