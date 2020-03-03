@@ -57,7 +57,43 @@ public class ListCarHelper {
 		return foundCars;
 	}
 	
-	// We are still missing updateCar function
+	public List<ListCar> searchForCarByModel(String model){
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<ListCar> typedQuery = em.createQuery("select lc from ListCar lc where lc.model = :selectedModel", ListCar.class);
+		typedQuery.setParameter("selectedModel", model);
+		
+		List<ListCar> foundCars = typedQuery.getResultList();
+		em.close();
+		return foundCars;
+	}
+	
+	public List<ListCar> searchForCarByYear(int year){
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<ListCar> typedQuery = em.createQuery("select lc from ListCar lc where lc.year = :selectedYear", ListCar.class);
+		typedQuery.setParameter("selectedYear", year);
+		
+		List<ListCar> foundCars = typedQuery.getResultList();
+		em.close();
+		return foundCars;
+	}
+	
+	public ListCar searchForCarById(int id){
+		EntityManager em =  emfactory.createEntityManager();
+		em.getTransaction().begin();
+		ListCar found = em.find(ListCar.class, id);
+		em.close();
+		return found;
+	}
+	
+	public void updateCar(ListCar toEdit) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.merge(toEdit);
+		em.getTransaction().commit();
+		em.close();
+	}
 	
 	public void cleanUp() {
 		emfactory.close();
