@@ -38,12 +38,13 @@ public class NavigationServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request, response);
 		ListCarHelper dao = new ListCarHelper();
 		String act = request.getParameter("doThisToCar");
 		String path = "/viewAllCarsServlet";
 		
 		if (act.equals("delete"))
-		{//delete does not work: gives me the error "No transaction is currently active"
+		{
 			try {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));
 			ListCar carToDelete = dao.searchForCarById(tempId);

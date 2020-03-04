@@ -19,9 +19,9 @@
 		</tr>
 	</c:forEach>
 </table>
-<input type = "submit" value = "edit" name = "doThisToCar">
-<input type = "submit" value = "delete" name = "doThisToCar">
-<input type = "submit" value = "add" name = "doThisToCar">
+<input type = "submit" value="edit" name="doThisToCar">
+<input type = "submit" value="delete" name="doThisToCar">
+<input type = "submit" value="add" name="doThisToCar">
 </form>
 </body>
 </html>
