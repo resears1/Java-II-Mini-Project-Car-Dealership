@@ -3,13 +3,17 @@ package model;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,11 +25,17 @@ public class ListDetails {
 	private int id;
 	@Column(name="LIST_NAME")
 	private String listName;
-	@Column(name="TRIP_DATE")
+	@Column(name="POST_DATE")
 	private LocalDate postDate;
-	@ManyToOne
+	@ManyToOne (cascade=CascadeType.PERSIST)
 	@JoinColumn(name="DEALER_ID")
 	private Dealer dealer;
+	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
+		@JoinTable
+		(
+			name = "CARS_ON_LIST", joinColumns= {@JoinColumn(name="LIST_ID",referencedColumnName="LIST_ID")},
+			inverseJoinColumns= {@JoinColumn(name="CAR_ID",referencedColumnName="ID", unique=true)}
+		)
 	private List<ListCar> listOfCars;
 	
 	public ListDetails() {

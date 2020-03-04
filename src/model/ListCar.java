@@ -63,7 +63,7 @@ public class ListCar {
 		this.year = year;
 	}
 	
-	public String getCarDetails() {
+	public String toString() {
 		return year + " " + make + " " + model;
 	}
 }
