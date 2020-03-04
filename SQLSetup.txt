@@ -4,6 +4,6 @@ create table cars (ID int NOT NULL AUTO_INCREMENT, MAKE varchar(30) NOT NULL, MO
 
 create table dealer(DEALER_ID int not null auto_increment, DEALER_NAME varchar(30) not null, primary key(DEALER_ID));
 
-create table list_details(LIST_ID int not null auto_increment, LIST_NAME varchar(30), POST_DATE DATE, SHOPPER_ID int, primary key(LIST_ID), foreign key(DEALER_ID) references dealer(DEALER_ID));
+create table list_details(LIST_ID int not null auto_increment, LIST_NAME varchar(30), POST_DATE DATE, DEALER_ID int, primary key(LIST_ID), foreign key(DEALER_ID) references dealer(DEALER_ID));
 
 create table cars_on_list(CAR_ID int not null, LIST_ID int not null, foreign key(LIST_ID) references list_details(LIST_ID), foreign key(CAR_ID) references cars(id));
