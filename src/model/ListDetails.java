@@ -33,7 +33,7 @@ public class ListDetails {
 	@OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 		@JoinTable
 		(
-			name = "CARS_ON_LIST", joinColumns= {@JoinColumn(name="LIST_ID",referencedColumnName="LIST_ID")},
+			name = "cars_on_list", joinColumns= {@JoinColumn(name="LIST_ID",referencedColumnName="LIST_ID")},
 			inverseJoinColumns= {@JoinColumn(name="CAR_ID",referencedColumnName="ID", unique=true)}
 		)
 	private List<ListCar> listOfCars;
