@@ -5,9 +5,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Car</title>
 </head>
 <body>
+<h1>Edit Selected Car</h1>
 <form action = "editCarServlet" method="post">
 Make: <input type ="text" name ="make" value ="${carToEdit.make}">
 Model: <input type ="text" name ="model" value ="${carToEdit.model}">
@@ -15,5 +16,6 @@ Year: <input type ="text" name ="year" value ="${carToEdit.year}">
 <input type = "hidden" name ="id" value = "${carToEdit.id}">
 <input type = "submit" value="Save Edited Car">
 </form>
+<a href="index.html"><em>Return to Homepage</em></a>
 </body>
 </html>

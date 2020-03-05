@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Add a new Dealership</h1>
 <form action = "createNewListServlet" method="post">
 List Name: <input type ="text" name = "listName"><br />
 Post Date: <input type ="text" name = "month" placeholder="mm" size="4">
 <input type ="text" name = "day" placeholder="dd" size="4">
-<input type ="text" name = "year" placeholder="yyyy" size="4">
+<input type ="text" name = "year" placeholder="yyyy" size="4"><br />
 Dealer Name: <input type = "text" name = "dealerName"><br />
 
 Available Cars:<br />
@@ -24,6 +25,7 @@ Available Cars:<br />
 <br />
 <input type = "submit" value = "Create List and Add Cars">
 </form>
-<a href = "index.html">Go add new Cars instead</a>
+<br />
+<a href = "index.html">Add a new Car/ Return Home</a>
 </body>
 </html>

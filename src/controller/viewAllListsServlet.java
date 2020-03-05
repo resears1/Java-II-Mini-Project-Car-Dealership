@@ -15,13 +15,13 @@ import model.ListDetails;
  * Servlet implementation class viewAllListsServlet
  */
 @WebServlet("/viewAllListsServlet")
-public class viewAllListsServlet extends HttpServlet {
+public class ViewAllListsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public viewAllListsServlet() {
+    public ViewAllListsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

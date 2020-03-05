@@ -16,7 +16,7 @@ public class Tester {
 		ListDetailsHelper ldh = new ListDetailsHelper();
 		//I got lazy with the names
 		ListCar test = new ListCar("testMake", "testModel", 2000);
-		ListCar test2 = new ListCar("Test2Make", "test2Model", 2001);
+		ListCar test2 = new ListCar("testMakeagain", "test2Model", 2001);
 		List<ListCar> stewsCars = new ArrayList<ListCar>();
 		stewsCars.add(test);
 		stewsCars.add(test2);

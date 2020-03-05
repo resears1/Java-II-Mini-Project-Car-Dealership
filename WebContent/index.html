@@ -2,17 +2,48 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Dealership Directory Home</title>
+<style> 
+	label {
+	font-weight: bold;
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 80px;
+    text-align: right;
+    padding: 10px;
+	}
+
+	input[type=text] {
+	  width: 25%;
+	  height: 30px;
+	  padding: 12px 20px;
+	  padding-left: 50px;
+	  margin: 20px 0;
+	  box-sizing: border-box;
+	}
+	
+	form {
+		width: 50%;
+		border: 2px dotted black;
+	}
+</style>
 </head>
 <body>
+<h1>Dealership Directory Home</h1>
+<p>Here you can view car listings for Car Dealerships in your area!</p>
 <form action="addCarServlet" method="post">
-Make: <input type="text" name="make">
-Model: <input type="text" name="model">
-Year: <input type="text" name="year">
-<input type="submit" value="Add Car">
+<div style="text-align:center; padding: 5px;"><h3>Add a Car to the list!</h3></div>
+<label>Make: </label><input type="text" name="make"> <br />
+<label>Model: </label><input type="text" name="model"> <br />
+<label>Year: </label><input type="text" name="year"> <br />
+<div style="text-align:center; padding: 5px;"><input type="submit" value="Add Car"></div>
 </form> <br />
-<a href="viewAllCarsServlet">View the full list of Cars</a>
-<a href="viewAllListsServlet">View all dealer Lists</a> <br />
-<a href="addCarsForListServlet">Create a new List</a>
+<br />
+<a href="viewAllCarsServlet"><em>View our List of Cars</em></a><br />
+<br />
+<a href="viewAllListsServlet"><em>View our Dealers</em></a> <br />
+<br />
+<a href="addCarsForListServlet"><em>Add a new Dealership</em></a><br />
 </body>
 </html> 
